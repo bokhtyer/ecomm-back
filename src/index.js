@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // MongoDB Connect
 mongoose.connect(
     `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.qgdbrib.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`,
+//    ` mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.beczvzw.mongodb.net/${process.env.MONGO_DB_DATABASE}`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -51,9 +52,6 @@ app.use("/api",userRouter);
 app.use("/api",categoryRouter);
 app.use("/api",productRouter);
 app.use("/api",cartRouter);
-
-
-
 
 app.listen(process.env.PORT,()=>{
     console.log(`This Server is Running Your Server Port ${process.env.PORT}`)
